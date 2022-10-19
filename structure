@@ -6,6 +6,8 @@ home (hero -> websites; products [websites, mail, TODO server]; about; reviews)
   - mailhosting (configure -> sale)
 - server
   - rootserver (configure -> sale)
+  - cloud (configure -> sale)
+  - managed hosting (configure -> sale)
 - legal
   - impressum
   - agb
