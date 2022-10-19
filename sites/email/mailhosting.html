@@ -1,0 +1,177 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>Webshop</title>
+	<link href="../../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../../css/product-configuration.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="../../js/offline-store.js" type="application/javascript"></script>
+	<script src="../../js/scroll-progress.js" type="application/javascript"></script>
+</head>
+<body>
+	<div id="status-update-list">
+	</div>
+	<nav>
+		<div class="container">
+			<ul>
+				<li id="brand-logo"><a href="../index.html"><div class="ghost-logo"></div></a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../websites/products.html">Websites</a>
+						<div class="nav-dropdown-content">
+							<a href="../websites/template.html">Vorlagen</a>
+							<a href="../websites/onlineshop.html">Webshop</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="#">Email</a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../server/products.html">Server</a>
+						<div class="nav-dropdown-content">
+							<a href="../server/cloud.html">Cloud</a>
+							<a href="../server/rootserver.html">Rootserver</a>
+							<a href="../server/managed-hosting.html">Managed Hosting</a>
+						</div>
+					</div>
+				</li>
+				<div class="nav-right">
+					<li><a class="nav-min-padding" href="../user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li><a class="nav-min-padding" href="../user/settings.html"><i class="fa-solid fa-user"></i></a></li>
+				</div>
+			</ul>
+		</div>
+		<div id="scroll-progress-bar"></div>
+	</nav>
+	<section class="hero-section">
+		<div class="container">
+			<div class="grid2">
+				<div class="flex-vcenter">
+					<h1>Seriös und flexibel mit<br>eigener Mail-Adresse</h1>
+					<ul class="hero-usps">
+						<li><i class="fa-solid fa-check"></i>&nbsp; 100% Werbefrei</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Inklusive eigener Domain</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Schutz vor Viren, Spam und Phishing</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Keine Vorkenntnisse nötig</li>
+					</ul>
+				</div>
+				<div class="flex-vcenter">
+					<img class="image-w80 hero-image" src="../../assets/illustrations/blog-writer-content-fit.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="white-themed">
+		<div class="container">
+			<h2>Erfolgreich mit professionellen E-Mail-Adressen</h2>
+			<h3>Ob privat oder geschäftlich - flexibel und überall zugänglich</h3>
+			<div class="m4">
+				<div class="grid2 m4">
+					<img class="image-w60" src="../../assets/illustrations/frontend-designer-content-fit.png">
+					<div class="flex-vcenter">
+						<h4>Für alle möglichen Anwendungsfälle</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+				</div>
+				<div class="grid2 m4">
+					<div class="flex-vcenter">
+						<h4>Kostenlose Wunschdomain</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+					<img class="image-w60" src="../../assets/illustrations/fast-loading-content-fit.png">
+				</div>
+				<div class="grid2 m4">
+					<img class="image-w60" src="../../assets/illustrations/testing-content-fit.png">
+					<div class="flex-vcenter">
+						<h4>Automatische Sicherheitsüberprüfung</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<h2>Unsere Tarife:</h2>
+            <div class="grid3 h-wide m2" id="email-tiers">
+                <div data-selected="true" class="email-plan white-themed darker-themed">
+                    <h3>Basic</h3>
+                    <ul>
+                        <li>1 E-Mail Postfach mit 2 GB,<br>jederzeit erweiterbar</li>
+                        <li>Kostenlose Domain</li>
+                        <li>Sicherheitsfilter</li>
+                        <li>Auf allen Geräten synchron</li>
+                    </ul>
+                    <p><span class="pricetag">1,-€</span> / Monat</p>
+                    <button class="brand-button transparent" onclick="selectEmailPlan(0)">Ausgewählt</button>
+                </div>
+                <div data-selected="false" class="email-plan">
+                    <h3>Premium</h3>
+                    <ul>
+                        <li>5 E-Mail Postfächer mit je 10 GB,<br>jederzeit erweiterbar</li>
+                        <li>Kostenlose Domain</li>
+                        <li>Sicherheitsfilter</li>
+                        <li>Auf allen Geräten synchron</li>
+                    </ul>
+                    <p><span class="pricetag">4,-€</span> / Monat</p>
+                    <button class="brand-button transparent" onclick="selectEmailPlan(1)">Auswählen</button>
+                </div>
+                <div data-selected="false" class="email-plan">
+                    <h3>Professional</h3>
+                    <ul>
+                        <li>50 E-Mail Postfächer mit je 25 GB</li>
+                        <li>Kostenlose Domain</li>
+                        <li>Sicherheitsfilter</li>
+                        <li>Auf allen Geräten synchron</li>
+                        <li>Erweiterte Verwaltungstools</li>
+                    </ul>
+                    <p><span class="pricetag">35,-€</span> / Monat</p>
+                    <button class="brand-button transparent" onclick="selectEmailPlan(2)">Auswählen</button>
+                </div>
+                <div class="flex-hsb grid-item-width3 email-finish white-themed">
+                    <form>
+                        <label for="fDomain">Deine Wunschdomain:</label>
+                        <span>deinEmail@</span>
+                        <input name="fDomain" type="text" placeholder="wunschdomain.de">
+                    </form>
+                    <button class="brand-button" onclick="addEmailProduct()">Zum Warenkorb hinzufügen</button>
+                </div>
+            </div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="grid4 h-wide">
+				<div class="flex-vsb">
+					<a href="../index.html"><img src="../../assets/brand/Logo.png"></a>
+					<i>© 2022 Noah Maichel</i>
+				</div>
+				<div>
+					<ul>
+						<li><a href="../websites/products.html">Websites</a></li>
+						<li><a href="../email/mailhosting.html">Email</a></li>
+						<li><a href="../server/products.html">Server</a></li>
+					</ul>
+				</div>
+				<div>
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/noah.maichel"><span><i class="fa-brands fa-instagram"></i>&nbsp; Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/noah-maichel-4a1b16241/"><span><i class="fa-brands fa-linkedin"></i>&nbsp; Linkedin</span></a></li>
+                        <li><a target="_blank" href="mailto:support@nmhosting.de"><span><i class="fa-regular fa-envelope"></i>&nbsp; E-Mail</span></a></li>
+                    </ul>
+				</div>
+				<div>
+					<ul>
+                        <li><a href="../legal/agb.html"><span>AGB</span></a></li>
+                        <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

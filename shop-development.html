@@ -1,0 +1,156 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>Webshop</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="js/offline-store.js" type="application/javascript"></script>
+	<script src="js/scroll-progress.js" type="application/javascript"></script>
+</head>
+<body>
+	<nav>
+		<div class="container">
+			<ul>
+				<li id="brand-logo"><a href="./sites/index.html"><div class="ghost-logo"></div></a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a>Websites</a>
+						<div class="nav-dropdown-content">
+							<a href="./sites/websites/template.html">Vorlagen</a>
+							<a href="./sites/websites/onlineshop.html">Webshop</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="./sites/email/mailhosting.html">Email</a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a>Server</a>
+						<div class="nav-dropdown-content">
+							<a href="./sites/server/cloud.html">Cloud</a>
+							<a href="./sites/server/rootserver.html">Rootserver</a>
+							<a href="./server/managed-hosting.html">Managed Hosting</a>
+						</div>
+					</div>
+				</li>
+				<div class="nav-right">
+					<li><a class="nav-min-padding" href="./sites/user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li><a class="nav-min-padding" href="./sites/user/settings.html"><i class="fa-solid fa-user"></i></a></li>
+				</div>
+			</ul>
+		</div>
+		<div id="scroll-progress-bar"></div>
+	</nav>
+	<section class="hero-section">
+		<div class="container">
+			<div class="grid2">
+				<div class="flex-vcenter">
+					<h1>Shop development</h1>
+				</div>
+				<div class="flex-vcenter">
+					<img class="image-w80 hero-image" src="assets/illustrations/fast-loading-content-fit.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="white-themed">
+		<div class="container">
+			<h2>Warenkorb</h2>
+			<h3>Hinzufügen, Löschen, Anzeigen</h3>
+			<div class="grid4 m4">
+				<div>
+					<h4>Produkt hinzufügen</h4>
+					<form id="product-configuration">
+						<label for="fTest">Test: </label>
+						<input name="fTest" type="text">
+					</form>
+					<button class="brand-button" onclick="addTestProduct()">Zum Warenkorb hinzufügen</button>
+				</div>
+				<div>
+					<h4>Produkt entfernen (i:0)</h4>
+					<button class="brand-button" onclick="removeItemFromCart(0)">Aus Warenkorb entfernen</button>
+				</div>
+				<div>
+					<h4>Warenkorb leeren</h4>
+					<button class="brand-button" onclick="clearCart()">Warenkorb leeren</button>
+				</div>
+				<div>
+					<h4>Warenkorb loggen</h4>
+					<button class="brand-button" onclick="logCart()">Warenkorb loggen</button>
+				</div>
+			</div>
+			<div>
+				<h3>Warenkorb:</h3>
+				<ul id="cart-list">
+				</ul>
+				<button class="brand-button dark" onclick="printCart()">Warenkorb aktualisieren</button>
+			</div>
+		</div>
+	</section>
+	<!-- STATUS UPDATE SNIPPET - START -->
+	<div id="status-update-list">
+	</div>
+	<!-- STATUS UPDATE SNIPPET - END -->
+	<section>
+		<div class="container">
+			<h2>Benachrichtigungen</h2>
+			<div class="grid4 m4">
+				<div>
+					<h4>Produkt hinzugefügt</h4>
+					<button class="brand-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-plus\'></i> Zum Warenkorb hinzugefügt', 0)">Abspielen</button>
+				</div>
+				<div>
+					<h4>Produkt entfernt</h4>
+					<button class="brand-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-minus\'></i> Aus Warenkorb entfernt', 0)">Abspielen</button>
+				</div>
+				<div>
+					<h4>Status: success</h4>
+					<button class="brand-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-check\'></i> Eingeloggt', 1)">Abspielen</button>
+				</div>
+				<div>
+					<h4>Status: failed</h4>
+					<button class="brand-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> Login fehlgeschlagen', 2)">Abspielen</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="white-themed">
+		<div class="container">
+			<h2>Future features</h2>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="grid4 h-wide">
+				<div class="flex-vsb">
+					<a href="../index.html"><img src="./assets/brand/Logo.png"></a>
+					<i>© 2022 Noah Maichel</i>
+				</div>
+				<div>
+					<ul>
+						<li><a href="../websites/products.html">Websites</a></li>
+						<li><a href="../email/mailhosting.html">Email</a></li>
+						<li><a href="../server/products.html">Server</a></li>
+					</ul>
+				</div>
+				<div>
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/noah.maichel"><span><i class="fa-brands fa-instagram"></i>&nbsp; Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/noah-maichel-4a1b16241/"><span><i class="fa-brands fa-linkedin"></i>&nbsp; Linkedin</span></a></li>
+                        <li><a target="_blank" href="mailto:support@nmhosting.de"><span><i class="fa-regular fa-envelope"></i>&nbsp; E-Mail</span></a></li>
+                    </ul>
+				</div>
+				<div>
+					<ul>
+                        <li><a href="../legal/agb.html"><span>AGB</span></a></li>
+                        <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

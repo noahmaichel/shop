@@ -1,0 +1,60 @@
+/* EMAIL CONFIG*/
+
+.email-plan {
+    text-align: center;
+    margin: 0 20px;
+    padding: 20px 36px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.email-plan button {
+    color: #E94560;
+    text-decoration: underline;
+}
+
+.white-themed.email-plan h3 {
+	color: #131313;
+}
+
+.white-themed.email-plan button {
+    text-decoration: none;
+}
+
+.email-plan ul {
+	list-style-type: none;
+    padding: 0px;
+}
+
+.email-plan ul li {
+    padding: 10px 0;
+}
+
+.email-plan p {
+    font-size: 12px;
+}
+
+.email-plan p span {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.email-finish {
+    align-items: center;
+    padding: 20px 36px;
+    border-radius: 10px;
+}
+
+.email-finish label {
+    margin-right: 20px;
+}
+
+.email-finish input {
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #dadada;
+}
+
+.email-finish input:focus {
+    outline: none;
+}

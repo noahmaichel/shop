@@ -1,0 +1,15 @@
+home (hero -> websites; products [websites, mail, TODO server]; about; reviews)
+- websites (hero -> template (deals); products/variations)
+  - template (select theme -> configure -> sale)
+  - onlineshop (select theme -> configure -> sale)
+- email
+  - mailhosting (configure -> sale)
+- server
+  - rootserver (configure -> sale)
+- legal
+  - impressum
+  - agb
+  - datenschutz
+- user (settings, details)
+  - cart (all products added to cart)
+  - checkout (payment process)

@@ -1,0 +1,439 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Lato, sans-serif;
+	background-color: #16213E;
+	padding: 0px;
+	margin: 0px;
+	color: #fff;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 18px 0;
+}
+
+h2 {
+	font-size: 2em;
+	margin: 16px 0;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin: 14px 0;
+}
+
+h4 {
+	font-size: 1.2em;
+	margin: 12px 0;
+}
+
+h5 {
+	font-size: 1em;
+	margin: 10px 0;
+}
+
+h6 {
+	font-size: 0.8em;
+	margin: 8px 0;
+}
+
+button {
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+}
+
+form {
+	margin: 0;
+}
+
+/* UTILITY CLASSES */
+
+.container {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.m2 {
+	margin: 20px 0;
+}
+
+.m4 {
+	margin: 40px 0;
+}
+
+.m6 {
+	margin: 60px 0;
+}
+
+.hoverable-tile {
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.hoverable-tile.tile-cpu {
+	padding: 0;
+	justify-content: end;
+	background-image: url('../assets/processor.jpg');
+	background-size: contain;
+	background-position: bottom;
+}
+
+.hoverable-tile.tile-cpu:hover {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/processor.jpg');
+}
+
+.hoverable-tile.tile-cpu > div {
+	padding: 20px;
+	background: rgb(0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 60%, rgba(255,255,255,0) 100%);
+}
+
+.hoverable-tile p, .hoverable-tile ul {
+	font-weight: 300;
+}
+
+.grid2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px 12px;
+}
+
+.grid3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px 12px;
+}
+
+.grid3.h-wide {
+	gap: 0px 60px;
+}
+
+.grid4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px 12px;
+}
+
+.grid4.h-wide {
+	gap: 12px 60px;
+}
+
+.grid-item-height2 {
+	grid-row: 1 / span 2;
+}
+
+.grid-item-width3 {
+	grid-column: 1 / span 3;
+}
+
+.flex-vcenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.flex-hcenter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.flex-hsb { /*flex: horizontal (row), space-between*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.flex-vsb { /*flex: vertical (column), space-between*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.image-w60 {
+	width: 60%;
+	margin: auto 20%;
+}
+
+.image-w80 {
+	width: 80%;
+	margin: auto 10%;
+}
+
+section {
+	padding: 40px 0;
+	background-color: #0F3460;
+}
+
+.brand-button {
+	background-color: #E94560;
+	color: #fff;
+	width: max-content;
+	padding: 10px 18px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.brand-button.transparent {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.white-themed {
+	background-color: #fff;
+	color: #131313;
+}
+
+.white-themed.darker-themed {
+	background-color: #ececec;
+}
+
+.white-themed a {
+	color: #131313;
+}
+
+.white-themed h3 {
+	color: #707070;
+}
+
+.white-themed .hoverable-tile {
+	background-color: #0F3460;
+	color: #fff;
+}
+
+.white-themed.darker-themed .hoverable-tile {
+	background-color: #fff;
+	color: #131313;
+}
+
+.white-themed .hoverable-tile:hover {
+	color: #fff;
+	background-color: #16213E;
+	box-shadow: 0 0 12px 6px rgba(0, 0, 0, .1);
+}
+
+.white-themed.darker-themed .hoverable-tile:hover {
+	color: #E94560;
+	background-color: #fff;
+	box-shadow: 0 0 12px 6px rgba(0, 0, 0, .05);
+}
+
+.white-themed .hoverable-tile:hover .link-highlight {
+	text-decoration: underline;
+}
+
+.white-themed .brand-button.brand-button.transparent {
+	color: #131313;
+}
+
+/* NAVIGATION */
+
+nav {
+	background-color: #16213E;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+nav .container {
+	max-width: 1164px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-right: 16px;
+	display: flex;
+	flex-direction: row;
+}
+
+nav ul li:hover {
+	background-color: #E94560;
+}
+
+nav ul li a {
+	display: block;
+	text-align: center;
+	padding: 16px 32px;
+}
+
+.nav-right {
+	margin-left: auto;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-min-padding {
+	padding: 16px 16px;
+}
+
+#brand-logo:hover {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#brand-logo .ghost-logo {
+	background-image: url("../assets/brand/Logo.png");
+	background-size: contain;
+	height: 35px;
+	width: 98px;
+}
+
+#brand-logo:hover .ghost-logo {
+	background-image: url("../assets/brand/Logo-red.png");
+}
+
+#brand-logo a {
+	padding: 8px 32px;
+}
+
+#scroll-progress-bar {
+	width: 0%;
+	height: 4px;
+	background: #E94560;
+	z-index: 1;
+}
+
+.nav-dropdown {
+	position: relative;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+	display: block;
+}
+
+.nav-dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #0F3460;
+}
+
+.nav-dropdown-content a:hover {
+	background-color: #16213E;
+}
+
+/* HERO */
+
+.hero-section {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-image: linear-gradient(to bottom, #16213E, #0F3460);
+}
+
+.hero-usps {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.hero-usps li {
+	margin: 8px 0;
+}
+
+.hero-image {
+	filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7));
+}
+
+/* ABOUT US */
+
+.about-us {
+	padding: 40px 0;
+	background-color: #fff;
+	text-align: justify;
+}
+
+.about-us h2, .about-us h3 {
+	text-align: center;
+}
+
+/* CUSTOMER REVIEWS*/
+
+.review p {
+	margin-top: 0px;
+}
+
+.review span {
+	font-style: italic;
+	font-weight: 300;
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #16213E;
+	padding: 40px 0;
+}
+
+footer img {
+	width: 60%;
+}
+
+footer ul {
+	margin: 0;
+	list-style-type: none;
+	line-height: 2em;
+}
+
+footer a:hover {
+	color: #E94560;
+}
+
+/* STATUS UPDATES */
+
+#status-update-list {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	bottom: 50px;
+	right: 100px;
+}
+
+.status-update {
+	width: max-content;
+	margin: 4px 0;
+	padding: 8px 16px;
+	background-color: #fff;
+	color: #131313;
+	border: 1px solid #000;
+	border-radius: 25px;
+	animation: slide-in-out 6s ease-in-out;
+}
+
+@keyframes slide-in-out {
+	0% { 
+		transform: translateX(calc(100px + 100%)); 		
+	}
+	5% { 
+	   transform: translateX(0%);
+	   display: none;
+	}
+	95% { 
+		transform: translateX(0%); 		
+	}
+	100% { 
+	   transform: translateX(calc(100px + 100%));
+	}
+}
+
+.status-update.success {
+	background-color: #4CAF50;
+	border-color: #4CAF50;
+	color: #fff;
+}
+
+.status-update.failure {
+	background-color: #D32F2F;
+	border-color: #D32F2F;
+	color: #fff;
+}

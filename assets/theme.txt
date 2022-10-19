@@ -1,0 +1,4 @@
+Dark-Navy:  #16213E
+Navy:       #0F3460
+Purple:     #533483
+Red:        #E94560
