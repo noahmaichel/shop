@@ -69,7 +69,7 @@ const all_products = new Map([
 			["domain", "deine-domain.de"]
 		]),
 	}],
-	["mail_prefessional", {
+	["mail_professional", {
 		name: "Mail - Professional",
 		description: "50 E-Mail Postfächer mit je 25 GB",
 		price: "35,00",
@@ -97,8 +97,10 @@ function addTestProduct() {
 
 function addEmailProduct() {
 	let tiers = document.getElementById("email-tiers");
+	let domainField = tiers.querySelector("div > form > input");
 	let selectedPlanIndex = -1;
 	let product = "invalid_product";
+	let config = new Map();
 
 	Array.from(tiers.children).forEach((child, i) => {
 		if (child.getAttribute("data-selected") == "true") {
@@ -121,7 +123,13 @@ function addEmailProduct() {
 			return;
 	}
 
-	addItemToCart(product);
+	if (domainField.value == "") { // TODO domain lookup
+		enqueueUpdate("<i class='fa-solid fa-xmark'></i> Es wird eine Domain benötigt", 2);
+		return;
+	}
+	config.set("domain", domainField.value);
+
+	addItemToCart(product, config);
 }
 
 // general
