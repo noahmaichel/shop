@@ -77,7 +77,35 @@ const all_products = new Map([
 			["domain", "deine-domain.de"]
 		]),
 	}],
+	["cloud", {
+		name: "Cloud Computing",
+		description: "Individuelles Cloud Server Paket",
+		price: "xx,xx",
+		details: new Map([
+			["cpu", "1 vCore"],
+			["ram", "512 MB"],
+			["storage", "10 GB"]
+		]),
+	}],
 ]);
+
+const cloud_prices = {
+	// cpu
+	0: [0.99, 1.99, 2.99, 4.99, 8.99],
+	// ram
+	1: [0.5, 1, 2, 4, 7, 12, 20],
+	// storage
+	2: [0.25, 0.5, 1, 2, 4],
+}
+
+const cloud_values = {
+	// cpu
+	0: ["1 vCore", "2 vCore", "4 vCore", "8 vCore", "16 vCore"],
+	// ram
+	1: ["512 MB", "1 GB", "2 GB", "4 GB", "8 GB", "16 GB", "32 GB"],
+	// storage
+	2: ["10 GB", "20 GB", "50 GB", "100 GB", "200 GB"],
+}
 
 // predefined product adders
 
@@ -128,6 +156,29 @@ function addEmailProduct() {
 		return;
 	}
 	config.set("domain", domainField.value);
+
+	addItemToCart(product, config);
+}
+
+function addCloudProduct() {
+	let sliders = document.querySelectorAll("input[type=range]");
+	let price = 0.0;
+	let product = "cloud";
+	let config = new Map();
+
+	if (sliders.length != 3) {
+		return;
+	}
+
+	// easier than using loops, etc.
+
+	price += cloud_prices[0][parseInt(sliders[0].value, 10)];
+	price += cloud_prices[1][parseInt(sliders[1].value, 10)];
+	price += cloud_prices[2][parseInt(sliders[2].value, 10)];
+
+	config.set("cpu", cloud_values[0][parseInt(sliders[0].value, 10)]);
+	config.set("ram", cloud_values[1][parseInt(sliders[1].value, 10)]);
+	config.set("storage", cloud_values[2][parseInt(sliders[2].value, 10)]);
 
 	addItemToCart(product, config);
 }
@@ -210,6 +261,22 @@ function selectEmailPlan(index) {
 	});
 }
 
+function updateCloudPrice() {
+	let displayPrice = document.getElementById("config-price");
+	let sliders = document.querySelectorAll("input[type=range]");
+	let price = 0.0;
+
+	if (displayPrice == null || sliders.length != 3) {
+		return;
+	}
+
+	Array.from(sliders).forEach((slider, i) => {
+		price += cloud_prices[i][parseInt(slider.value, 10)];
+	});
+
+	displayPrice.innerHTML = price + "€";
+}
+
 /* INTERNAL API */
 
 const STORAGE_ID_USER = 0;
@@ -264,4 +331,7 @@ function reviver(key, value) {
 
 /* SETUP */
 
-localStorage.setItem(STORAGE_ID_CART, JSON.stringify([], replacer, 4));
+if (localStorage.getItem(STORAGE_ID_CART) == null) {
+	localStorage.setItem(STORAGE_ID_CART, JSON.stringify([], replacer, 4));
+}
+updateCloudPrice();
