@@ -58,3 +58,31 @@
 .email-finish input:focus {
     outline: none;
 }
+
+/* CLOUD */
+
+.config-slider {
+	grid-column: 2 / span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.config-slider input {
+	width: 100%;
+}
+
+.config-labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#config-actions {
+    justify-content: end;
+    align-items: baseline;
+}
+
+#config-actions div {
+    margin-right: 40px;
+}

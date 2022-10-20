@@ -116,7 +116,11 @@ form {
 }
 
 .grid3.h-wide {
-	gap: 0px 60px;
+	column-gap: 60px;
+}
+
+.grid3.v-wide {
+	row-gap: 32px;
 }
 
 .grid4 {
@@ -436,4 +440,38 @@ footer a:hover {
 	background-color: #D32F2F;
 	border-color: #D32F2F;
 	color: #fff;
+}
+
+/* INPUT RANGE - copied the base from a Linode product page because ranges are annoying */
+
+input {
+	background-color: #0F3460;
+}
+
+input[type="range"]::-moz-range-progress {
+	background-color: #E94560;
+	border: 0px solid rgba(0,0,0,0);
+	border-radius: 4px;
+	box-sizing: border-box;
+	height: 8px;
+}
+
+input[type="range"]::-moz-range-thumb {
+	background: #E94560;
+	border: 7px solid #fff;
+	border-radius: 12px;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+}
+
+input[type="range"]::-moz-range-track {
+	background: #fff;
+	border: 0px solid rgba(0,0,0,0);
+	border-radius: 4px;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 8px;
+	width: 100%;
 }
