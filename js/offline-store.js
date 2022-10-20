@@ -176,6 +176,8 @@ function addCloudProduct() {
 	price += cloud_prices[1][parseInt(sliders[1].value, 10)];
 	price += cloud_prices[2][parseInt(sliders[2].value, 10)];
 
+	product.price = price.toFixed(2);;
+
 	config.set("cpu", cloud_values[0][parseInt(sliders[0].value, 10)]);
 	config.set("ram", cloud_values[1][parseInt(sliders[1].value, 10)]);
 	config.set("storage", cloud_values[2][parseInt(sliders[2].value, 10)]);
@@ -272,7 +274,7 @@ function updateCloudPrice() {
 		price += cloud_prices[i][parseInt(slider.value, 10)];
 	});
 
-	displayPrice.innerHTML = price + "€";
+	displayPrice.innerHTML = price.toFixed(2); + "€";
 }
 
 /* INTERNAL API */
