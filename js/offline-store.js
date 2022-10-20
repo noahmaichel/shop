@@ -120,14 +120,14 @@ function addTestProduct() {
 		config.set(element.name, element.value);
 	});
 
-	addItemToCart("test_product", config);
+	addItemToCart(Object.assign({},all_products.get("test_product")), config);
 }
 
 function addEmailProduct() {
 	let tiers = document.getElementById("email-tiers");
 	let domainField = tiers.querySelector("div > form > input");
 	let selectedPlanIndex = -1;
-	let product = "invalid_product";
+	let product = Object.assign({},all_products.get("invalid_product"));
 	let config = new Map();
 
 	Array.from(tiers.children).forEach((child, i) => {
@@ -138,13 +138,13 @@ function addEmailProduct() {
 
 	switch (selectedPlanIndex) {
 		case 0:
-			product = "mail_basic";
+			product = Object.assign({},all_products.get("mail_basic"));
 			break;
 		case 1:
-			product = "mail_premium";
+			product = Object.assign({},all_products.get("mail_premium"));
 			break;
 		case 2:
-			product = "mail_professional";
+			product = Object.assign({},all_products.get("mail_professional"));
 			break;
 		default:
 			enqueueUpdate("<i class='fa-solid fa-xmark'></i> Invalid plan index", 2);
@@ -163,7 +163,7 @@ function addEmailProduct() {
 function addCloudProduct() {
 	let sliders = document.querySelectorAll("input[type=range]");
 	let price = 0.0;
-	let product = "cloud";
+	let product = Object.assign({},all_products.get("cloud"));
 	let config = new Map();
 
 	if (sliders.length != 3) {
@@ -185,9 +185,7 @@ function addCloudProduct() {
 
 // general
 
-function addItemToCart(product_name, details) {
-	product = all_products.get(product_name);
-
+function addItemToCart(product, details) {
 	if (details instanceof Map) {
 		product.details = details;
 	}
