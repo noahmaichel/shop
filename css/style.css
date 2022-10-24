@@ -1,9 +1,15 @@
+@font-face {
+	font-family: Alliance1;
+	src: url("https://github.githubassets.com/static/fonts/github/alliance-1.woff2");
+  }
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
-	font-family: Lato, sans-serif;
+	font-family: "Alliance1","Alliance1HeaderFallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  	font-feature-settings: unset;
 	background-color: #16213E;
 	padding: 0px;
 	margin: 0px;
