@@ -1,4 +1,98 @@
-Features:
-- list all items in cart
-  - remove, clear-all
-  - proceed to checkout
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>AGB - nmHosting</title>
+	<link href="../../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="../../js/offline-store.js" defer type="application/javascript"></script>
+	<script src="../../js/scroll-progress.js" defer type="application/javascript"></script>
+</head>
+<body>
+	<div id="status-update-list">
+	</div>
+	<nav>
+		<div class="container">
+			<ul>
+				<li id="brand-logo"><a href="../index.html"><div class="ghost-logo"></div></a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a>Websites</a>
+						<div class="nav-dropdown-content">
+							<a href="../websites/template.html">Vorlagen</a>
+							<a href="../websites/onlineshop.html">Webshop</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="../email/mailhosting.html">Email</a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a>Server</a>
+						<div class="nav-dropdown-content">
+							<a href="../server/cloud.html">Cloud</a>
+							<a href="../server/rootserver.html">Rootserver</a>
+							<a href="../server/managed-hosting.html">Managed Hosting</a>
+						</div>
+					</div>
+				</li>
+				<div class="nav-right">
+					<li><a class="nav-min-padding" href="../user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li><a class="nav-min-padding" href="../user/settings.html"><i class="fa-solid fa-user"></i></a></li>
+				</div>
+			</ul>
+		</div>
+		<div id="scroll-progress-bar"></div>
+	</nav>
+	<section class="white-themed">
+		<div class="container">
+			<h1>Dein Warenkorb</h1>
+			<div id="cart">
+				<!-- Empty cart element -->
+				<div class="cart-item">
+					<span class="cart-product-name">Name</span>
+					<span class="cart-product-name">Description</span>
+					<span class="cart-product-name">Details</span>
+					<span class="cart-product-name">Price</span>
+				</div>
+			</div>
+			<div id="cart-info">
+				<span id="cart-total">Total</span>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="grid4 h-wide">
+				<div class="flex-vsb">
+					<a href="../index.html"><img src="../../assets/brand/Logo.png"></a>
+					<i>since 2022</i>
+				</div>
+				<div>
+					<ul>
+						<li><a href="../websites/products.html">Websites</a></li>
+						<li><a href="../email/mailhosting.html">Email</a></li>
+						<li><a href="../server/products.html">Server</a></li>
+					</ul>
+				</div>
+				<div>
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/noah.maichel"><span><i class="fa-brands fa-instagram"></i>&nbsp; Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/noah-maichel-4a1b16241/"><span><i class="fa-brands fa-linkedin"></i>&nbsp; Linkedin</span></a></li>
+                        <li><a target="_blank" href="mailto:support@nmhosting.de"><span><i class="fa-regular fa-envelope"></i>&nbsp; E-Mail</span></a></li>
+                    </ul>
+				</div>
+				<div>
+					<ul>
+                        <li><a href="../legal/agb.html"><span>AGB</span></a></li>
+                        <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
