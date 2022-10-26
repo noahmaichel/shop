@@ -49,18 +49,32 @@
 	<section class="white-themed">
 		<div class="container">
 			<h1>Dein Warenkorb</h1>
-			<div id="cart">
-				<!-- Empty cart element -->
-				<div class="cart-item">
-					<span class="cart-product-name">Name</span>
-					<span class="cart-product-name">Description</span>
-					<span class="cart-product-name">Details</span>
-					<span class="cart-product-name">Price</span>
-				</div>
-			</div>
+			<table id="cart">
+				<thead>
+					<tr id="cart-header" class="cart-item">
+						<td class="cart-item-name">Produktname</td>
+						<td class="cart-item-description">Beschreibung</td>
+						<td class="cart-item-details">Details</td>
+						<td class="cart-item-price">Preis</td>
+						<td class="cart-item-actions"></td>
+					</tr>
+				</thead>
+				</tbody>
+					<tr class="cart-item">
+						<td class="cart-item-name">/</td>
+						<td class="cart-item-description"></td>
+						<td class="cart-item-details"></td>
+						<td class="cart-item-price"></td>
+						<td class="cart-item-actions">
+						</td>
+					</tr>
+				</tbody>
+			</table>
 			<div id="cart-info">
-				<span id="cart-total">Total</span>
+				<span>Gesamtpreis (inkl. MwSt..): </span>
+				<span id="cart-total">TOTAL</span>
 			</div>
+			<p class="text-align-right"><a id="checkout-button" class="brand-button">Jetzt bezahlen</a></p>
 		</div>
 	</section>
 	<footer>

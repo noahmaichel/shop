@@ -113,12 +113,14 @@ function addTestProduct() {
 	let productConfig = document.getElementById("product-configuration");
 	let config = new Map();
 
-	Array.from(productConfig.children).forEach(element => {
-		if (element.tagName != "INPUT") {
-			return;
-		}
-		config.set(element.name, element.value);
-	});
+	if (productConfig != undefined) {
+		Array.from(productConfig.children).forEach(element => {
+			if (element.tagName != "INPUT") {
+				return;
+			}
+			config.set(element.name, element.value);
+		});
+	}
 
 	addItemToCart(Object.assign({},all_products.get("test_product")), config);
 }
@@ -316,6 +318,10 @@ function updateCart() {
 			cartItem.append(actionTd);
 			
 			cart.append(cartItem);
+
+			let checkout = document.getElementById("checkout-button");
+			checkout.style.opacity = 1.0;
+			checkout.setAttribute("href", "./checkout.html");
 		}
 	} else {
 			let cartItem = document.createElement("tr");
@@ -343,6 +349,10 @@ function updateCart() {
 			cartItem.append(actionTd);
 			
 			cart.append(cartItem);
+
+			let checkout = document.getElementById("checkout-button");
+			checkout.style.opacity = 0.6;
+			checkout.removeAttribute("href");
 	}
 
 	let cartTotal = document.getElementById("cart-total");

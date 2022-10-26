@@ -211,6 +211,18 @@ input[type="range"]::-moz-range-track {
 	margin: auto 10%;
 }
 
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
 section {
 	padding: 40px 0;
 	background-color: #0F3460;
@@ -273,7 +285,11 @@ section {
 	text-decoration: underline;
 }
 
-.white-themed .brand-button.brand-button.transparent {
+.white-themed .brand-button {
+	color: #fff;
+}
+
+.white-themed .brand-button.transparent {
 	color: #131313;
 }
 
