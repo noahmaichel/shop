@@ -54,6 +54,38 @@ form {
 	margin: 0;
 }
 
+input[type="range"] {
+	background-color: #0F3460;
+}
+
+input[type="range"]::-moz-range-progress {
+	background-color: #E94560;
+	border: 0px solid rgba(0,0,0,0);
+	border-radius: 4px;
+	box-sizing: border-box;
+	height: 8px;
+}
+
+input[type="range"]::-moz-range-thumb {
+	background-color: #E94560;
+	border: 7px solid #fff;
+	border-radius: 12px;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 24px;
+	width: 24px;
+}
+
+input[type="range"]::-moz-range-track {
+	background-color: #fff;
+	border: 0px solid rgba(0,0,0,0);
+	border-radius: 4px;
+	box-sizing: border-box;
+	cursor: pointer;
+	height: 8px;
+	width: 100%;
+}
+
 /* UTILITY CLASSES */
 
 .container {
@@ -451,36 +483,58 @@ footer a:hover {
 	color: #fff;
 }
 
-/* INPUT RANGE */
+/* CART */
 
-input[type="range"] {
-	background-color: #0F3460;
-}
-
-input[type="range"]::-moz-range-progress {
-	background-color: #E94560;
-	border: 0px solid rgba(0,0,0,0);
-	border-radius: 4px;
-	box-sizing: border-box;
-	height: 8px;
-}
-
-input[type="range"]::-moz-range-thumb {
-	background-color: #E94560;
-	border: 7px solid #fff;
-	border-radius: 12px;
-	box-sizing: border-box;
-	cursor: pointer;
-	height: 24px;
-	width: 24px;
-}
-
-input[type="range"]::-moz-range-track {
-	background-color: #fff;
-	border: 0px solid rgba(0,0,0,0);
-	border-radius: 4px;
-	box-sizing: border-box;
-	cursor: pointer;
-	height: 8px;
+#cart {
+	border-width: 0;
+	padding: 0;
 	width: 100%;
+	border-spacing: 0;
+}
+
+#cart-header {
+	font-weight: 600;
+}
+
+.cart-item {
+	display: flex;
+}
+
+.cart-item td {
+	padding: 12px 8px;
+	border-bottom: 1px solid #131313;
+}
+
+.cart-item-name {
+	width: 250px;
+}
+
+.cart-item-description {
+	width: 50%;
+}
+
+.cart-item-details {
+	width: 50%;
+}
+
+.cart-item-price {
+	width: 60px;
+}
+
+.cart-item-actions {
+	display: flex;
+	width: 25px;
+}
+
+.cart-item-actions-button {
+	color: #131313;
+	cursor: pointer;
+}
+
+#cart-info {
+	padding: 12px 8px;
+	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 35px;
 }

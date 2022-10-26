@@ -120,16 +120,30 @@
 	<section class="white-themed">
 		<div class="container">
 			<h2>Warenkorb</h2>
-			<table>
-				<tr>
-					<td>Name</td>
-					<td>Beschreibung</td>
-					<td>Details</td>
-					<td>Price</td>
-				</tr>
+			<table id="cart">
+				<thead>
+					<tr id="cart-header" class="cart-item">
+						<td class="cart-item-name">Produktname</td>
+						<td class="cart-item-description">Beschreibung</td>
+						<td class="cart-item-details">Details</td>
+						<td class="cart-item-price">Preis</td>
+						<td class="cart-item-actions"></td>
+					</tr>
+				</thead>
+				</tbody>
+					<tr class="cart-item">
+						<td class="cart-item-name">/</td>
+						<td class="cart-item-description"></td>
+						<td class="cart-item-details"></td>
+						<td class="cart-item-price"></td>
+						<td class="cart-item-actions">
+						</td>
+					</tr>
+				</tbody>
 			</table>
 			<div id="cart-info">
-				<span id="cart-total">Total</span>
+				<span>Gesamtpreis (inkl. MwSt..): </span>
+				<span id="cart-total">TOTAL</span>
 			</div>
 		</div>
 	</section>
