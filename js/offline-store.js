@@ -41,7 +41,7 @@ const all_products = new Map([
 	["invalid_product", {
 		name: "Invalid Produkt",
 		description: "Invalid",
-		price: "-1,00",
+		price: "999999,99",
 		details: new Map([
 		]),
 	}],
@@ -87,6 +87,48 @@ const all_products = new Map([
 			["storage", "10 GB"]
 		]),
 	}],
+	["root_ssd_s", {
+		name: "Root S - SSD",
+		description: "AMD Ryzen™ 5 3600, 64 GB DDR4 RAM, 2 x 512 GB NVMe SSD, 1 Gbit/s",
+		price: "44,39",
+		details: new Map([
+		]),
+	}],
+	["root_ssd_m", {
+		name: "Root M - SSD",
+		description: "AMD Ryzen™ 7 3700X, 64 GB DDR4 ECC RAM, 2 x 1 TB NVMe SSD, 1 Gbit/s",
+		price: "70,57",
+		details: new Map([
+		]),
+	}],
+	["root_ssd_l", {
+		name: "Root L - SSD",
+		description: "AMD EPYC™ 7502P, 128 GB DDR4 RAM, 2 x 8 TB NVMe SSD, 2 Gbit/s",
+		price: "142,56",
+		details: new Map([
+		]),
+	}],
+	["root_hdd_s", {
+		name: "Root S - HDD",
+		description: "AMD Ryzen™ 5 3600, 64 GB DDR4 RAM, 2 x 2 TB HDD, 1 Gbit/s",
+		price: "44,39",
+		details: new Map([
+		]),
+	}],
+	["root_hdd_m", {
+		name: "Root M - HDD",
+		description: "AMD Ryzen™ 7 3700X, 64 GB DDR4 ECC RAM, 2 x 8 TB HDD, 1 Gbit/s",
+		price: "70,57",
+		details: new Map([
+		]),
+	}],
+	["root_hdd_l", {
+		name: "Root L - HDD",
+		description: "AMD EPYC™ 7502P, 128 GB DDR4 RAM, 4 x 8 TB HDD, 2 Gbit/s",
+		price: "142,56",
+		details: new Map([
+		]),
+	}],
 ]);
 
 const cloud_prices = {
@@ -122,14 +164,14 @@ function addTestProduct() {
 		});
 	}
 
-	addItemToCart(Object.assign({},all_products.get("test_product")), config);
+	addItemToCart(Object.assign({}, all_products.get("test_product")), config);
 }
 
 function addEmailProduct() {
 	let tiers = document.getElementById("email-tiers");
 	let domainField = tiers.querySelector("div > form > input");
 	let selectedPlanIndex = -1;
-	let product = Object.assign({},all_products.get("invalid_product"));
+	let product = Object.assign({}, all_products.get("invalid_product"));
 	let config = new Map();
 
 	Array.from(tiers.children).forEach((child, i) => {
@@ -140,13 +182,13 @@ function addEmailProduct() {
 
 	switch (selectedPlanIndex) {
 		case 0:
-			product = Object.assign({},all_products.get("mail_basic"));
+			product = Object.assign({}, all_products.get("mail_basic"));
 			break;
 		case 1:
-			product = Object.assign({},all_products.get("mail_premium"));
+			product = Object.assign({}, all_products.get("mail_premium"));
 			break;
 		case 2:
-			product = Object.assign({},all_products.get("mail_professional"));
+			product = Object.assign({}, all_products.get("mail_professional"));
 			break;
 		default:
 			enqueueUpdate("<i class='fa-solid fa-xmark'></i> Invalid plan index", 2);
@@ -165,7 +207,7 @@ function addEmailProduct() {
 function addCloudProduct() {
 	let sliders = document.querySelectorAll("input[type=range]");
 	let price = 0.0;
-	let product = Object.assign({},all_products.get("cloud"));
+	let product = Object.assign({}, all_products.get("cloud"));
 	let config = new Map();
 
 	if (sliders.length != 3) {
@@ -183,6 +225,34 @@ function addCloudProduct() {
 	config.set("cpu", cloud_values[0][parseInt(sliders[0].value, 10)]);
 	config.set("ram", cloud_values[1][parseInt(sliders[1].value, 10)]);
 	config.set("storage", cloud_values[2][parseInt(sliders[2].value, 10)]);
+
+	addItemToCart(product, config);
+}
+
+function addRootServerProduct(plan) {
+	let product = Object.assign({}, all_products.get("invalid_product"));
+	let config = new Map();
+
+	switch (plan) {
+		case "ssd_s":
+			product = Object.assign({}, all_products.get("root_ssd_s"));
+			break;
+		case "ssd_m":
+			product = Object.assign({}, all_products.get("root_ssd_m"));
+			break;
+		case "ssd_l":
+			product = Object.assign({}, all_products.get("root_ssd_l"));
+			break;
+		case "hdd_s":
+			product = Object.assign({}, all_products.get("root_hdd_s"));
+			break;
+		case "hdd_m":
+			product = Object.assign({}, all_products.get("root_hdd_m"));
+			break;
+		case "hdd_l":
+			product = Object.assign({}, all_products.get("root_hdd_l"));
+			break;
+	}
 
 	addItemToCart(product, config);
 }
@@ -251,12 +321,14 @@ function printCart() {
 }
 
 function updateCart() {
-	let cart = document.getElementById("cart").getElementsByTagName("tbody")[0];
+	let cartTable = document.getElementById("cart");
 	let internalCart = getCart();
 
-	if (cart == null) {
+	if (cartTable == null) {
 		return;
 	}
+
+	let cart = cartTable.getElementsByTagName("tbody")[0];
 
 	while (cart.firstChild) {
 		cart.removeChild(cart.firstChild);
@@ -396,6 +468,28 @@ function updateCloudPrice() {
 	});
 
 	displayPrice.innerHTML = price.toFixed(2); + "€";
+}
+
+function setRootServerType(index) {
+	let ssdSwitch = document.getElementById("ssd-switch");
+	let hddSwitch = document.getElementById("hdd-switch");
+	let ssdOffers = document.getElementById("rootserver-ssd");
+	let hddOffers = document.getElementById("rootserver-hdd");
+
+	switch (index) {
+		case 0:
+			ssdSwitch.setAttribute("data-selected", "true");
+			hddSwitch.setAttribute("data-selected", "false");
+			ssdOffers.setAttribute("data-selected", "true");
+			hddOffers.setAttribute("data-selected", "false");
+			break;
+		case 1:
+			ssdSwitch.setAttribute("data-selected", "false");
+			hddSwitch.setAttribute("data-selected", "true");
+			ssdOffers.setAttribute("data-selected", "false");
+			hddOffers.setAttribute("data-selected", "true");
+			break;
+	}
 }
 
 /* INTERNAL API */

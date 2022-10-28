@@ -106,6 +106,22 @@ input[type="range"]::-moz-range-track {
 	margin: 60px 0;
 }
 
+.mt1 {
+	margin-top: 10px;
+}
+
+.mt2 {
+	margin-top: 20px;
+}
+
+.mb1 {
+	margin-bottom: 10px;
+}
+
+.mb2 {
+	margin-bottom: 20px;
+}
+
 .hoverable-tile {
 	display: flex;
 	padding: 20px;

@@ -1,2 +1,212 @@
-Features:
-- select plan
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>Rootserver - nmHosting</title>
+	<link href="../../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../../css/product-configuration.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="../../js/offline-store.js" defer type="application/javascript"></script>
+	<script src="../../js/scroll-progress.js" defer type="application/javascript"></script>
+</head>
+<body>
+	<div id="status-update-list">
+	</div>
+	<nav>
+		<div class="container">
+			<ul>
+				<li id="brand-logo"><a href="../index.html"><div class="ghost-logo"></div></a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../websites/products.html">Websites</a>
+						<div class="nav-dropdown-content">
+							<a href="../websites/template.html">Vorlagen</a>
+							<a href="../websites/onlineshop.html">Webshop</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="../email/mailhosting.html">Email</a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../server/products.html">Server</a>
+						<div class="nav-dropdown-content">
+							<a href="../server/cloud.html">Cloud</a>
+							<a href="#">Rootserver</a>
+							<a href="../server/managed-hosting.html">Managed Hosting</a>
+						</div>
+					</div>
+				</li>
+				<div class="nav-right">
+					<li><a class="nav-min-padding" href="../user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li><a class="nav-min-padding" href="../user/settings.html"><i class="fa-solid fa-user"></i></a></li>
+				</div>
+			</ul>
+		</div>
+		<div id="scroll-progress-bar"></div>
+	</nav>
+	<section class="hero-section">
+		<div class="container">
+			<div class="grid2">
+				<div class="flex-vcenter">
+					<h1>Leistungsstarke<br>Rootserver</h1>
+					<ul class="hero-usps">
+						<li><i class="fa-solid fa-check"></i>&nbsp; Dedizierte Hardware</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Unbegrenzter Traffic</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Ohne Mindestvertragslaufzeit</li>
+					</ul>
+					<p>ab <span class="price-tag">TODO</span> / Monat &nbsp;&nbsp;&nbsp;<a class="brand-button" href="#">Zu den Tarifen</a></p>
+				</div>
+				<div class="flex-vcenter">
+					<img class="image-w80 image-glow" src="../../assets/illustrations/software-engineer-content-fit.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="white-themed">
+		<div class="container">
+			<h2>Spitzenleistung auf einer benutzerfreundlichen Hosting-Plattform</h2>
+			<h3>Dedizierte Hardware und eine breite Palette an Hosting-Funktionen</h3>
+			<div class="m4">
+				<div class="grid2 m4">
+					<div class="flex-vcenter">
+						<h4>Auf Sie zugeschnitten</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+					<img class="image-w60 image-glow" src="../../assets/illustrations/processing-content-fit.png">
+				</div>
+				<div class="grid2 m4">
+					<img class="image-w60 image-glow" src="../../assets/illustrations/blog-writer-content-fit.png">
+					<div class="flex-vcenter">
+						<h4>Einfach zu bedienen</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+				</div>
+				<div class="grid2 m4">
+					<div class="flex-vcenter">
+						<h4>Geringe Downtime</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+					<img class="image-w60 image-glow" src="../../assets/illustrations/server-down-content-fit.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+            <h2>Unsere Angebote</h2>
+            <div id="root-switch" class="m2">
+                <span data-selected="true" id="ssd-switch" onclick="setRootServerType(0)">SSD</span>
+                <span data-selected="false" id="hdd-switch" onclick="setRootServerType(1)">HDD</span>
+            </div>
+            <div data-selected="true" id="rootserver-ssd" class="m4">
+                <div class="grid3 h-wide">
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root S - SSD</h3>
+						<ul>
+							<li>AMD Ryzen™ 5 3600</li>
+							<li>64 GB DDR4</li>
+							<li>2 x 512 GB<br>NVMe SSD</li>
+							<li>1 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">44,39€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('ssd_s')">Zum Warenkorb hinzufügen</button>
+					</div>
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root M - SSD</h3>
+						<ul>
+							<li>AMD Ryzen™ 7 3700X</li>
+							<li>64 GB DDR4 ECC</li>
+							<li>2 x 1 TB<br>NVMe SSD</li>
+							<li>1 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">70,57€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('ssd_m')">Zum Warenkorb hinzufügen</button>
+					</div>
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root L - SSD</h3>
+						<ul>
+							<li>AMD EPYC™ 7502P</li>
+							<li>128 GB DDR4 ECC</li>
+							<li>2 x 8 TB<br>NVMe SSD</li>
+							<li>2 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">142,56€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('ssd_l')">Zum Warenkorb hinzufügen</button>
+					</div>
+                </div>
+            </div>
+            <div data-selected="false" id="rootserver-hdd" class="m4">
+                <div class="grid3 h-wide">
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root S - HDD</h3>
+						<ul>
+							<li>AMD Ryzen™ 5 3600</li>
+							<li>64 GB DDR4</li>
+							<li>2 x 2 TB HDD</li>
+							<li>1 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">44,39€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('hdd_s')">Zum Warenkorb hinzufügen</button>
+					</div>
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root M - SSD</h3>
+						<ul>
+							<li>AMD Ryzen™ 7 3700X</li>
+							<li>64 GB DDR4 ECC</li>
+							<li>2 x 8 TB HDD</li>
+							<li>1 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">70,57€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('hdd_m')">Zum Warenkorb hinzufügen</button>
+					</div>
+					<div class="rootserver-tile white-themed darker-themed">
+						<h3>Root L - SSD</h3>
+						<ul>
+							<li>AMD EPYC™ 7502P</li>
+							<li>128 GB DDR4 ECC</li>
+							<li>4 x 8 TB HDD</li>
+							<li>2 Gbit/s</li>
+						</ul>
+						<p><span class="price-tag">142,56€</span> / Monat</p>
+						<button class="brand-button mt1" onclick="addRootServerProduct('hdd_l')">Zum Warenkorb hinzufügen</button>
+					</div>
+                </div>
+            </div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="grid4 h-wide">
+				<div class="flex-vsb">
+					<a href="../index.html"><img src="../../assets/brand/Logo.png"></a>
+					<i>© 2022 Noah Maichel</i>
+				</div>
+				<div>
+					<ul>
+						<li><a href="../websites/products.html">Websites</a></li>
+						<li><a href="../email/mailhosting.html">Email</a></li>
+						<li><a href="../server/products.html">Server</a></li>
+					</ul>
+				</div>
+				<div>
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/noah.maichel"><span><i class="fa-brands fa-instagram"></i>&nbsp; Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/noah-maichel-4a1b16241/"><span><i class="fa-brands fa-linkedin"></i>&nbsp; Linkedin</span></a></li>
+                        <li><a target="_blank" href="mailto:support@nmhosting.de"><span><i class="fa-regular fa-envelope"></i>&nbsp; E-Mail</span></a></li>
+                    </ul>
+				</div>
+				<div>
+					<ul>
+                        <li><a href="../legal/agb.html"><span>AGB</span></a></li>
+                        <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

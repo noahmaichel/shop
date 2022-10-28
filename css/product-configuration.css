@@ -81,3 +81,58 @@
 #config-actions div {
     margin-right: 40px;
 }
+
+/* ROOTSERVER */
+
+#root-switch {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+
+#root-switch span {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#root-switch span[data-selected="true"] {
+    background-color: #fff;
+    color: #E94560;
+    font-weight: 600;
+}
+
+#rootserver-hdd[data-selected="true"], #rootserver-ssd[data-selected="true"] {
+    display: block;
+}
+
+#rootserver-hdd[data-selected="false"], #rootserver-ssd[data-selected="false"] {
+    display: none;
+}
+
+.rootserver-tile {
+    text-align: center;
+    padding: 20px 36px;
+    border-radius: 10px;
+}
+
+.white-themed.rootserver-tile h3 {
+	color: #131313;
+}
+
+.rootserver-tile ul {
+	list-style-type: none;
+    padding: 0px;
+}
+
+.rootserver-tile ul li {
+    padding: 6px 0;
+}
+
+.rootserver-tile p {
+    font-size: 12px;
+}
