@@ -82,7 +82,7 @@
     margin-right: 40px;
 }
 
-/* ROOTSERVER */
+/* ROOTSERVER & MANAGED HOSTING */
 
 #root-switch {
     border: 1px solid #fff;
@@ -114,25 +114,25 @@
     display: none;
 }
 
-.rootserver-tile {
+.server-tile {
     text-align: center;
     padding: 20px 36px;
     border-radius: 10px;
 }
 
-.white-themed.rootserver-tile h3 {
+.white-themed.server-tile h3 {
 	color: #131313;
 }
 
-.rootserver-tile ul {
+.server-tile ul {
 	list-style-type: none;
     padding: 0px;
 }
 
-.rootserver-tile ul li {
+.server-tile ul li {
     padding: 6px 0;
 }
 
-.rootserver-tile p {
+.server-tile p {
     font-size: 12px;
 }

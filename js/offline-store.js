@@ -129,6 +129,27 @@ const all_products = new Map([
 		details: new Map([
 		]),
 	}],
+	["managed_s", {
+		name: "Managed S",
+		description: "Intel® Xeon® E3-1270 V3, 16 GB DDR3 ECC, 1024 GB NVMe SSD",
+		price: "38,49",
+		details: new Map([
+		]),
+	}],
+	["managed_m", {
+		name: "Managed M",
+		description: "Intel® Xeon® E5-2640, 32 GB DDR3 ECC, 2048 GB NVMe SSD",
+		price: "78,72",
+		details: new Map([
+		]),
+	}],
+	["managed_l", {
+		name: "Managed L",
+		description: "Intel® Xeon® E5-2630 V3, 64 GB DDR3 ECC, 4096 GB NVMe SSD",
+		price: "142,53",
+		details: new Map([
+		]),
+	}],
 ]);
 
 const cloud_prices = {
@@ -229,7 +250,7 @@ function addCloudProduct() {
 	addItemToCart(product, config);
 }
 
-function addRootServerProduct(plan) {
+function addServerProduct(plan) {
 	let product = Object.assign({}, all_products.get("invalid_product"));
 	let config = new Map();
 
@@ -251,6 +272,15 @@ function addRootServerProduct(plan) {
 			break;
 		case "hdd_l":
 			product = Object.assign({}, all_products.get("root_hdd_l"));
+			break;
+		case "managed_s":
+			product = Object.assign({}, all_products.get("managed_s"));
+			break;
+		case "managed_m":
+			product = Object.assign({}, all_products.get("managed_m"));
+			break;				
+		case "managed_l":
+			product = Object.assign({}, all_products.get("managed_l"));
 			break;
 	}
 
