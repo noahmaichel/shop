@@ -534,7 +534,8 @@ footer a:hover {
 }
 
 .cart-item-price {
-	width: 60px;
+	width: 100px;
+	text-align: right;
 }
 
 .cart-item-actions {
@@ -552,5 +553,5 @@ footer a:hover {
 	font-weight: 600;
 	display: flex;
 	justify-content: space-between;
-	margin-right: 35px;
+	margin-right: 33px;
 }

@@ -287,7 +287,7 @@ function updateCart() {
 			if (internalCart[i].details.size > 0) {
 				internalCart[i].details.forEach(function (value, key) {
 					if (value != "") {
-						details.innerHTML += key + ": " + value + "<br>";
+						details.innerHTML += key.charAt(0).toUpperCase() + word.slice(1) + ": " + value + "<br>";
 					}
 				});
 			}
@@ -296,7 +296,7 @@ function updateCart() {
 			
 			let price = document.createElement("td");
 			price.classList.add("cart-item-price");
-			price.innerHTML = internalCart[i].price + "€";
+			price.innerHTML = internalCart[i].price.replace(".", ",") + "€";
 			cartItem.append(price);
 
 			let actionTd = document.createElement("td");
