@@ -155,7 +155,8 @@
 
 #website-config-template ul {
     display: block;
-    padding: 24px 0;
+    padding: 0;
+    list-style: none;
 }
 
 #website-config-template ul li {
