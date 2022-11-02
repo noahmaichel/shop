@@ -161,6 +161,7 @@
 
 #website-config-template ul li {
     padding: 14px 24px;
+    cursor: pointer;
 }
 
 #website-config-preview {
