@@ -157,6 +157,10 @@ input[type="range"]::-moz-range-track {
 	gap: 12px 12px;
 }
 
+.grid2.h-wide {
+	column-gap: 32px;
+}
+
 .grid3 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -225,6 +229,10 @@ input[type="range"]::-moz-range-track {
 .image-w80 {
 	width: 80%;
 	margin: auto 10%;
+}
+
+.image-w100 {
+	width: 100%;
 }
 
 .text-align-left {
