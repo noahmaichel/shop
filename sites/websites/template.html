@@ -100,37 +100,40 @@
             <div id="website-config" class="m4">
                 <div id="website-config-template">
                     <ul>
-                        <li data-selected="true">Twenty Twenty-Two</li>
-                        <li>Astra</li>
-                        <li>Twenty Twenty</li>
-                        <li>Kadence</li>
-                        <li>PopularFX</li>
+                        <li data-selected="true" onclick="setWebsiteTemplate(0)">Twenty Twenty-Two</li>
+                        <li onclick="setWebsiteTemplate(1)">Astra</li>
+                        <li onclick="setWebsiteTemplate(2)">Twenty Twenty</li>
+                        <li onclick="setWebsiteTemplate(3)">Kadence</li>
+                        <li onclick="setWebsiteTemplate(4)">PopularFX</li>
                     </ul>
                 </div>
                 <div id="website-config-preview" class="grid2 h-wide">
 					<div class="flex-vsb">
-						<h3>Twenty Twenty-Two</h3>
-						<h4>Twenty Twenty-Two</h4>
-						<img class="image-w100" src="../../assets/website-templates/twentytwentytwo.jpg">
+						<h3 id="website-config-title">Twenty Twenty-Two</h3>
+						<img id="website-config-image" class="image-w100" src="../../assets/website-templates/twentytwentytwo.jpg">
 					</div>
 					<div class="flex-vsb">
 						<div>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolorum perferendis, quidem iure voluptatibus in maiores doloremque, nulla odit ullam voluptate fuga distinctio enim molestias incidunt, molestiae repellendus sapiente quod.</p>
-							<ul>
-								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-								<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+							<ul id="website-config-plan-advantages">
+								<li>Website-Erstellung ohne Vorkenntnisse perfekt bis ins Detail</li>
+								<li>Domain 1 Jahr inklusive</li>
+								<li>Professionelle E-Mail-Adresse inklusive</li>
 							</ul>
 						</div>
-						<div class="flex-hcenter">
+						<div class="flex-hsb flex-aib">
+							<div>
+								<span id="website-config-price" class="price-tag">4,99</span>
+								<span>/ Monat</span>
+							</div>
 							<button class="brand-button" onclick="enqueueUpdate('debug', 0);">Zum Warenkorb hinzufügen</button>
 						</div>
 					</div>
                 </div>
                 <div id="website-config-plan">
-                    <span data-selected="true">Starter</span>
-                    <span>Plus</span>
-                    <span>Pro</span>
+                    <span data-selected="true" onclick="setWebsiteTemplateTier(0)">Starter</span>
+                    <span onclick="setWebsiteTemplateTier(1)">Plus</span>
+                    <span onclick="setWebsiteTemplateTier(2)">Pro</span>
                 </div>
             </div>
 		</div>

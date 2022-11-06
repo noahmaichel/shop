@@ -209,16 +209,21 @@ input[type="range"]::-moz-range-track {
 	justify-content: center;
 }
 
-.flex-hsb { /*flex: horizontal (row), space-between*/
+.flex-hsb { /*flex -> horizontal (row), space-between*/
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.flex-vsb { /*flex: vertical (column), space-between*/
+.flex-vsb { /*flex -> vertical (column), space-between*/
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.flex-aib { /*flex -> align items baseline*/
+	display: flex;
+	align-items: baseline;
 }
 
 .image-w60 {

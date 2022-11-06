@@ -174,7 +174,7 @@
 }
 
 #website-config-preview {
-    height: 400px;
+    min-height: 400px;
     padding: 24px;
     background-color: #ececec;
     border-top-right-radius: 10px;
@@ -202,6 +202,8 @@
 #website-config-plan span[data-selected="true"] {
     border-top: 0px solid #131313;
     background-color: #ececec;
+    color: #E94560;
+    font-weight: 600;
 }
 
 #website-config-plan span:nth-child(3) {

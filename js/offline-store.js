@@ -150,6 +150,30 @@ const all_products = new Map([
 		details: new Map([
 		]),
 	}],
+	["website_template_starter", {
+		name: "Website-Template Starter",
+		description: "Website-Erstellung ohne Vorkenntnisse perfekt bis ins Detail",
+		price: "4,99",
+		details: new Map([
+			["template", "twentytwentytwo"]
+		]),
+	}],
+	["website_template_plus", {
+		name: "Website-Template Plus",
+		description: "Website-Erstellung mit maximaler Gestaltungsfreiheit",
+		price: "12,99",
+		details: new Map([
+			["template", "twentytwentytwo"]
+		]),
+	}],
+	["website_template_pro", {
+		name: "Website-Template Pro",
+		description: "Website-Erstellung mit maximaler Gestaltungsfreiheit",
+		price: "29,99",
+		details: new Map([
+			["template", "twentytwentytwo"]
+		]),
+	}],
 ]);
 
 const cloud_prices = {
@@ -518,6 +542,82 @@ function setRootServerType(index) {
 			hddSwitch.setAttribute("data-selected", "true");
 			ssdOffers.setAttribute("data-selected", "false");
 			hddOffers.setAttribute("data-selected", "true");
+			break;
+	}
+}
+
+function setWebsiteTemplate(index) {
+	let templates = document.getElementById("website-config-template");
+	let allTemplates = templates.children[0].children;
+	let activeTemplate = allTemplates[index];
+	
+	Array.from(allTemplates).forEach(element => {
+		element.setAttribute("data-selected", "false");
+	});
+	activeTemplate.setAttribute("data-selected", "true");
+
+	let title = document.getElementById("website-config-title");
+	let image = document.getElementById("website-config-image");
+	
+	switch (index) {
+		case 0:
+			title.innerHTML = "Twenty Twenty-Two";
+			image.src = "../../assets/website-templates/twentytwentytwo.jpg";
+			break;
+		case 1:
+			title.innerHTML = "Astra";
+			image.src = "../../assets/website-templates/astra.jpg";
+			break;
+		case 2:
+			title.innerHTML = "Twenty Twenty";
+			image.src = "../../assets/website-templates/twentytwo.jpg";
+			break;
+		case 3:
+			title.innerHTML = "Kadence";
+			image.src = "../../assets/website-templates/kadence.jpg";
+			break;
+		case 4:
+			title.innerHTML = "PopularFX";
+			image.src = "../../assets/website-templates/popularfx.jpg";
+			break;
+		default:
+			break;
+	}
+}
+
+function setWebsiteTemplateTier(index) {
+	let options = document.getElementById("website-config-plan");
+	let allOptions = options.children;
+	let activeOption = allOptions[index];
+
+	Array.from(allOptions).forEach(element => {
+		element.setAttribute("data-selected", "false");
+	});
+	activeOption.setAttribute("data-selected", "true");
+
+	let advantages = document.getElementById("website-config-plan-advantages");
+	let price = document.getElementById("website-config-price");
+
+	switch (index) {
+		case 0:
+			advantages.children[0].innerHTML = "Website-Erstellung ohne Vorkenntnisse perfekt bis ins Detail";
+			advantages.children[1].innerHTML = "Domain 1 Jahr inklusive";
+			advantages.children[2].innerHTML = "Professionelle E-Mail-Adresse inklusive";
+			price.innerHTML = all_products.get("website_template_starter").price;
+			break;
+		case 1:
+			advantages.children[0].innerHTML = "Website-Erstellung mit maximaler Gestaltungsfreiheit";
+			advantages.children[1].innerHTML = "Domain 1 Jahr inklusive";
+			advantages.children[2].innerHTML = "Mehrsprachige Website";
+			price.innerHTML = all_products.get("website_template_plus").price;
+			break;
+		case 2:
+			advantages.children[0].innerHTML = "Website-Erstellung mit maximaler Gestaltungsfreiheit";
+			advantages.children[1].innerHTML = "Mehrsprachige Website";
+			advantages.children[2].innerHTML = "Dynamische-Websites";
+			price.innerHTML = all_products.get("website_template_pro").price;
+			break;
+		default:
 			break;
 	}
 }
