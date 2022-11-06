@@ -722,6 +722,12 @@ function getData(id) {
 	return JSON.parse(item, reviver)
 }
 
+function preloadImage(url)
+{
+    var img = new Image();
+    img.src = url;
+}
+
 // from stack over flow: https://stackoverflow.com/questions/29085197/how-do-you-json-stringify-an-es6-map
 
 function replacer(key, value) {
@@ -751,3 +757,11 @@ if (localStorage.getItem(STORAGE_ID_CART) == null) {
 }
 updateCloudPrice();
 updateCart();
+
+// preload template images
+
+preloadImage("../../assets/website-templates/twentytwentytwo.jpg");
+preloadImage("../../assets/website-templates/astra.jpg");
+preloadImage("../../assets/website-templates/twentytwo.jpg");
+preloadImage("../../assets/website-templates/kadence.jpg");
+preloadImage("../../assets/website-templates/popularfx.jpg");
