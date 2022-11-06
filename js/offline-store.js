@@ -311,6 +311,76 @@ function addServerProduct(plan) {
 	addItemToCart(product, config);
 }
 
+function addWebsiteTemplateProduct() {
+	let plan = document.getElementById("website-config-plan");
+	let selectedPlanIndex = -1;
+
+	Array.from(plan.children).forEach((child, i) => {
+		if (child.getAttribute("data-selected") == "true") {
+			selectedPlanIndex = i;
+		}
+	});
+
+	if (selectedPlanIndex < 0) {
+		enqueueUpdate("failed to get selected plan", 2);
+		return;
+	}
+
+	let template = document.getElementById("website-config-template").children[0];
+	let selectedTemplateIndex = -1;
+
+	Array.from(template.children).forEach((child, i) => {
+		if (child.getAttribute("data-selected") == "true") {
+			selectedTemplateIndex = i;
+		}
+	});
+
+	if (selectedTemplateIndex < 0) {
+		enqueueUpdate("failed to get selected template", 2);
+		return;
+	}
+
+	let product = Object.assign({}, all_products.get("invalid_product"));
+	let config = new Map();
+
+	switch (selectedPlanIndex) {
+		case 0:
+			product = Object.assign({}, all_products.get("website_template_starter"));
+			break;
+		case 1:
+			product = Object.assign({}, all_products.get("website_template_plus"));
+			break;
+		case 2:
+			product = Object.assign({}, all_products.get("website_template_pro"));
+			break;
+		default:
+			enqueueUpdate("<i class='fa-solid fa-xmark'></i> Invalid plan index", 2);
+			return;
+	}
+
+	switch (selectedTemplateIndex) {
+		case 0:
+			config.set("template", "Twenty Twenty-Two")
+			break;
+		case 1:
+			config.set("template", "Astra")
+			break;
+		case 2:
+			config.set("template", "Twenty Twenty")
+			break;
+		case 3:
+			config.set("template", "Kadence")
+			break;
+		case 4:
+			config.set("template", "PopularFX")
+			break;
+		default:
+			break;
+	}
+
+	addItemToCart(product, config);
+}
+
 // general
 
 function addItemToCart(product, details) {
