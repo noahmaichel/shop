@@ -461,7 +461,7 @@ function updateCart() {
 	cartTotal.innerHTML = getCartTotal().toFixed(2).replace(".", ",") + "€";
 }
 
-/* PRODUCT FUNCTIONALITY */
+/* SITE FUNCTIONALITY */
 
 function selectEmailPlan(index) {
 	let selectionContainer = document.getElementById("email-tiers");

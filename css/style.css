@@ -239,6 +239,10 @@ input[type="range"]::-moz-range-track {
 	text-align: right;
 }
 
+.text-input-non-edit {
+	pointer-events: none;
+}
+
 section {
 	padding: 40px 0;
 	background-color: #0F3460;
@@ -513,61 +517,4 @@ footer a:hover {
 	background-color: #D32F2F;
 	border-color: #D32F2F;
 	color: #fff;
-}
-
-/* CART */
-
-#cart {
-	border-width: 0;
-	padding: 0;
-	width: 100%;
-	border-spacing: 0;
-}
-
-#cart-header {
-	font-weight: 600;
-}
-
-.cart-item {
-	display: flex;
-}
-
-.cart-item td {
-	padding: 12px 8px;
-	border-bottom: 1px solid #131313;
-}
-
-.cart-item-name {
-	width: 250px;
-}
-
-.cart-item-description {
-	width: 50%;
-}
-
-.cart-item-details {
-	width: 50%;
-}
-
-.cart-item-price {
-	width: 100px;
-	text-align: right;
-}
-
-.cart-item-actions {
-	display: flex;
-	width: 25px;
-}
-
-.cart-item-actions-button {
-	color: #131313;
-	cursor: pointer;
-}
-
-#cart-info {
-	padding: 12px 8px;
-	font-weight: 600;
-	display: flex;
-	justify-content: space-between;
-	margin-right: 33px;
 }
