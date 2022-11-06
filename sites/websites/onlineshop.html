@@ -1,3 +1,177 @@
-Features:
-- select theme
-- select domain
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+	<title>Onlineshop - nmHosting</title>
+	<link href="../../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../../css/product-configuration.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<script src="../../js/offline-store.js" defer type="application/javascript"></script>
+	<script src="../../js/scroll-progress.js" defer type="application/javascript"></script>
+</head>
+<body>
+	<div id="status-update-list">
+	</div>
+	<nav>
+		<div class="container">
+			<ul>
+				<li id="brand-logo"><a href="../index.html"><div class="ghost-logo"></div></a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../websites/products.html">Websites</a>
+						<div class="nav-dropdown-content">
+							<a href="../websites/template.html">Vorlagen</a>
+							<a href="#">Webshop</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="../email/mailhosting.html">Email</a></li>
+				<li>
+					<div class="nav-dropdown">
+						<a href="../server/products.html">Server</a>
+						<div class="nav-dropdown-content">
+							<a href="../server/cloud.html">Cloud</a>
+							<a href="../server/rootserver.html">Rootserver</a>
+							<a href="../server/managed-hosting.html">Managed Hosting</a>
+						</div>
+					</div>
+				</li>
+				<div class="nav-right">
+					<li><a class="nav-min-padding" href="../user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					<li><a class="nav-min-padding" href="../user/settings.html"><i class="fa-solid fa-user"></i></a></li>
+				</div>
+			</ul>
+		</div>
+		<div id="scroll-progress-bar"></div>
+	</nav>
+	<section class="hero-section">
+		<div class="container">
+			<div class="grid2">
+				<div class="flex-vcenter">
+					<h1>Onlineshop<br>nach deinen Anforderungen</h1>
+					<ul class="hero-usps">
+						<li><i class="fa-solid fa-check"></i>&nbsp; Sofort bereit</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Individuell konfigurierbar</li>
+						<li><i class="fa-solid fa-check"></i>&nbsp; Unbegrenzte Möglichkeiten</li>
+					</ul>
+					<p>ab <span class="price-tag">9,99€</span> / Monat &nbsp;&nbsp;&nbsp;<a class="brand-button" href="#products">Zu den Tarifen</a></p>
+				</div>
+				<div class="flex-vcenter">
+					<img class="image-w80 image-glow" src="../../assets/illustrations/frontend-designer-content-fit.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="white-themed">
+		<div class="container">
+			<h2>In drei Schritten zum eigenen Onlineshop</h2>
+			<h3>So erstellst du einen Onlineshop für dein Unternehmen.</h3>
+			<div class="m4">
+				<div class="grid2 m4">
+					<img class="image-w60 image-glow" src="../../assets/illustrations/upload-image-ui-content-fit.png">
+					<div class="flex-vcenter">
+						<h4>1. Website-Design wählen</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+				</div>
+				<div class="grid2 m4">
+					<div class="flex-vcenter">
+						<h4>2. Inhalte und Produkte gestalten</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+					<img class="image-w60 image-glow" src="../../assets/illustrations/blog-writer-content-fit.png">
+				</div>
+				<div class="grid2 m4">
+					<img class="image-w60 image-glow" src="../../assets/illustrations/wordpress-development-content-fit.png">
+					<div class="flex-vcenter">
+						<h4>3. Website veröffentlichen</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi incidunt molestiae asperiores aliquam rem error autem laborum consequuntur molestias quae, ut adipisci blanditiis ducimus aut, hic fugiat tenetur! Quod.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="products">
+		<div class="container">
+            <h2>Unsere Angebote</h2>
+            <div id="website-config" class="m4">
+                <div id="website-config-template">
+                    <ul>
+                        <li onclick="setWebsiteTemplate(0)" data-selected="true">Twenty Twenty-Two</li>
+                        <li onclick="setWebsiteTemplate(1)">Astra</li>
+                        <li onclick="setWebsiteTemplate(2)">Twenty Twenty</li>
+                        <li onclick="setWebsiteTemplate(3)">Kadence</li>
+                        <li onclick="setWebsiteTemplate(4)">PopularFX</li>
+                    </ul>
+                </div>
+                <div id="website-config-preview" class="grid2 h-wide">
+					<div class="flex-vsb">
+						<h3 id="website-config-title">Twenty Twenty-Two</h3>
+						<img id="website-config-image" class="image-w100" src="../../assets/website-templates/twentytwentytwo.jpg">
+					</div>
+					<div class="flex-vsb">
+						<div>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolorum perferendis, quidem iure voluptatibus in maiores doloremque, nulla odit ullam voluptate fuga distinctio enim molestias incidunt, molestiae repellendus sapiente quod.</p>
+							<ul id="website-config-plan-advantages">
+								<li>Webshop ohne Vorkenntnisse perfekt bis ins Detail</li>
+								<li>Domain 1 Jahr inklusive</li>
+								<li>Professionelle E-Mail-Adresse inklusive</li>
+							</ul>
+						</div>
+                        <form class="flex-hsb">
+                            <label for="fDomain"><b>Deine Wunschdomain:</b></label>
+                            <input id="website-config-Domain" name="fDomain" type="text" placeholder="wunschdomain.de">
+                        </form>
+						<div class="flex-hsb flex-aib">
+							<div>
+								<span id="website-config-price" class="price-tag">4,99</span>
+								<span>/ Monat</span>
+							</div>
+							<button class="brand-button" onclick="addOnlineshopProduct();">Zum Warenkorb hinzufügen</button>
+						</div>
+					</div>
+                </div>
+                <div id="website-config-plan">
+                    <span data-selected="true" onclick="setWebsiteTemplateTier(0)">Starter</span>
+                    <span onclick="setWebsiteTemplateTier(1)">Plus</span>
+                    <span onclick="setWebsiteTemplateTier(2)">Pro</span>
+                </div>
+            </div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="grid4 h-wide">
+				<div class="flex-vsb">
+					<a href="../index.html"><img src="../../assets/brand/Logo.png"></a>
+					<i>© 2022 Noah Maichel</i>
+				</div>
+				<div>
+					<ul>
+						<li><a href="../websites/products.html">Websites</a></li>
+						<li><a href="../email/mailhosting.html">Email</a></li>
+						<li><a href="../server/products.html">Server</a></li>
+					</ul>
+				</div>
+				<div>
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/noah.maichel"><span><i class="fa-brands fa-instagram"></i>&nbsp; Instagram</span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/noah-maichel-4a1b16241/"><span><i class="fa-brands fa-linkedin"></i>&nbsp; Linkedin</span></a></li>
+                        <li><a target="_blank" href="mailto:support@nmhosting.de"><span><i class="fa-regular fa-envelope"></i>&nbsp; E-Mail</span></a></li>
+                    </ul>
+				</div>
+				<div>
+					<ul>
+                        <li><a href="../legal/agb.html"><span>AGB</span></a></li>
+                        <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

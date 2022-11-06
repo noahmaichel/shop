@@ -174,6 +174,33 @@ const all_products = new Map([
 			["template", "twentytwentytwo"]
 		]),
 	}],
+	["onlineshop_starter", {
+		name: "Onlineshop Starter",
+		description: "Webshop ohne Vorkenntnisse perfekt bis ins Detail",
+		price: "9,99",
+		details: new Map([
+			["template", "twentytwentytwo"],
+			["domain", "deine-domain.de"],
+		]),
+	}],
+	["onlineshop_plus", {
+		name: "Onlineshop Plus",
+		description: "Webshop mit maximaler Gestaltungsfreiheit",
+		price: "12,99",
+		details: new Map([
+			["template", "twentytwentytwo"],
+			["domain", "deine-domain.de"],
+		]),
+	}],
+	["onlineshop_pro", {
+		name: "Onlineshop Pro",
+		description: "Webshop mit maximaler Gestaltungsfreiheit",
+		price: "29,99",
+		details: new Map([
+			["template", "twentytwentytwo"],
+			["domain", "deine-domain.de"],
+		]),
+	}],
 ]);
 
 const cloud_prices = {
@@ -240,7 +267,7 @@ function addEmailProduct() {
 			return;
 	}
 
-	if (domainField.value == "") { // TODO domain lookup
+	if (domainField.value == "" || !isValidDomain(domainField.value)) { // TODO domain lookup
 		enqueueUpdate("<i class='fa-solid fa-xmark'></i> Es wird eine Domain benötigt", 2);
 		return;
 	}
@@ -377,6 +404,84 @@ function addWebsiteTemplateProduct() {
 		default:
 			break;
 	}
+
+	addItemToCart(product, config);
+}
+
+function addOnlineshopProduct() {
+	let plan = document.getElementById("website-config-plan");
+	let selectedPlanIndex = -1;
+
+	Array.from(plan.children).forEach((child, i) => {
+		if (child.getAttribute("data-selected") == "true") {
+			selectedPlanIndex = i;
+		}
+	});
+
+	if (selectedPlanIndex < 0) {
+		enqueueUpdate("failed to get selected plan", 2);
+		return;
+	}
+
+	let template = document.getElementById("website-config-template").children[0];
+	let selectedTemplateIndex = -1;
+
+	Array.from(template.children).forEach((child, i) => {
+		if (child.getAttribute("data-selected") == "true") {
+			selectedTemplateIndex = i;
+		}
+	});
+
+	if (selectedTemplateIndex < 0) {
+		enqueueUpdate("failed to get selected template", 2);
+		return;
+	}
+
+	let product = Object.assign({}, all_products.get("invalid_product"));
+	let config = new Map();
+
+	switch (selectedPlanIndex) {
+		case 0:
+			product = Object.assign({}, all_products.get("onlineshop_starter"));
+			break;
+		case 1:
+			product = Object.assign({}, all_products.get("onlineshop_plus"));
+			break;
+		case 2:
+			product = Object.assign({}, all_products.get("onlineshop_pro"));
+			break;
+		default:
+			enqueueUpdate("<i class='fa-solid fa-xmark'></i> Invalid plan index", 2);
+			return;
+	}
+
+	switch (selectedTemplateIndex) {
+		case 0:
+			config.set("template", "Twenty Twenty-Two")
+			break;
+		case 1:
+			config.set("template", "Astra")
+			break;
+		case 2:
+			config.set("template", "Twenty Twenty")
+			break;
+		case 3:
+			config.set("template", "Kadence")
+			break;
+		case 4:
+			config.set("template", "PopularFX")
+			break;
+		default:
+			break;
+	}
+	
+	let domainField = document.getElementById("website-config-Domain");
+
+	if (domainField.value == "" || !isValidDomain(domainField.value)) { // TODO domain lookup
+		enqueueUpdate("<i class='fa-solid fa-xmark'></i> Es wird eine Domain benötigt", 2);
+		return;
+	}
+	config.set("domain", domainField.value);
 
 	addItemToCart(product, config);
 }
@@ -726,6 +831,11 @@ function preloadImage(url)
 {
     var img = new Image();
     img.src = url;
+}
+
+function isValidDomain(domain) {
+	let re = new RegExp("^(?!-)[A-Za-z0-9-]+([\\-\\.]{1}[a-z0-9]+)*\\.[A-Za-z]{2,6}$"); 
+    return domain.match(re);
 }
 
 // from stack over flow: https://stackoverflow.com/questions/29085197/how-do-you-json-stringify-an-es6-map
