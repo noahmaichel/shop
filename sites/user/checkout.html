@@ -54,19 +54,31 @@
                 <div>
                     <h3>Zahlungsmethode</h3>
                     <form id="payment-form">
-                        <div class="payment-methods">
+                        <div class="payment-method">
                             <input type="radio" name="payment-method">
                             <label>Kreditkarte</label>
-                            <div>
-                                <label>Kartennummer</label>
-                                <input type="text">
-                                <label>Ablaufdatum</label>
-                                <input type="text">
-                                <label>Prüfziffer</label>
-                                <input type="text">
-                                <label>Land</label>
-                                <input type="text" class="text-input-non-edit" value="Deutschland">
+                            <div id="payment-credit-card" class="payment-method-layout">
+                                <input type="text" placeholder="Kartennummer">
+                                <input type="text" placeholder="Ablaufdatum">
+                                <input type="text" placeholder="Prüfziffer">
                             </div>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment-method">
+                            <label>SEPA Lastschrift</label>
+                            <div class="payment-method-layout">
+                                <input type="text" placeholder="IBAN">
+                                <input type="text" placeholder="Kontoinhaber">
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment-method">
+                            <label>PayPal</label>
+                            <div>
+								<button id="paypal-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist im Moment nicht verfügbar', 2)">
+									Weiter mit <img src="../../assets/payments/paypal-wide.png" height="20px">
+								</button>
+							</div>
                         </div>
                     </form>
                 </div>
