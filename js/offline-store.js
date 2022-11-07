@@ -292,7 +292,7 @@ function addCloudProduct() {
 	price += cloud_prices[1][parseInt(sliders[1].value, 10)];
 	price += cloud_prices[2][parseInt(sliders[2].value, 10)];
 
-	product.price = price.toFixed(2);;
+	product.price = price.toFixed(2);
 
 	config.set("cpu", cloud_values[0][parseInt(sliders[0].value, 10)]);
 	config.set("ram", cloud_values[1][parseInt(sliders[1].value, 10)]);
@@ -797,6 +797,21 @@ function setWebsiteTemplateTier(index) {
 	}
 }
 
+function updateCheckout() {
+	let total = getCartTotal();
+	let paymentPrice = document.getElementById("payment-price");
+	let paymentTax = document.getElementById("payment-tax");
+	let paymentTotal = document.getElementById("payment-total");
+
+	if (!paymentPrice || !paymentTax || !paymentTotal) {
+		return;
+	}
+
+	paymentPrice.innerHTML = (total * 0.81).toFixed(2).replace(".", ",") + "€";
+	paymentTax.innerHTML = (total * 0.19).toFixed(2).replace(".", ",") + "€";
+	paymentTotal.innerHTML = total.toFixed(2).replace(".", ",") + "€";
+}
+
 /* INTERNAL API */
 
 const STORAGE_ID_USER = 0;
@@ -867,6 +882,7 @@ if (localStorage.getItem(STORAGE_ID_CART) == null) {
 }
 updateCloudPrice();
 updateCart();
+updateCheckout();
 
 // preload template images
 
