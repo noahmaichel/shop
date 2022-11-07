@@ -55,8 +55,8 @@
                     <h3>Zahlungsmethode</h3>
                     <form id="payment-form">
                         <div class="payment-method">
-                            <input type="radio" name="payment-method">
-                            <label>Kreditkarte</label>
+                            <input id="payment-card" type="radio" name="payment-method" checked="checked">
+                            <label for="payment-card">Kreditkarte</label>
                             <div id="payment-credit-card" class="payment-method-layout">
                                 <input type="text" placeholder="Kartennummer">
                                 <input type="text" placeholder="Ablaufdatum">
@@ -64,16 +64,16 @@
                             </div>
                         </div>
                         <div class="payment-method">
-                            <input type="radio" name="payment-method">
-                            <label>SEPA Lastschrift</label>
+                            <input id="payment-sepa" type="radio" name="payment-method">
+                            <label for="payment-sepa">SEPA Lastschrift</label>
                             <div class="payment-method-layout">
                                 <input type="text" placeholder="IBAN">
                                 <input type="text" placeholder="Kontoinhaber">
                             </div>
                         </div>
                         <div class="payment-method">
-                            <input type="radio" name="payment-method">
-                            <label>PayPal</label>
+                            <input id="payment-paypal" type="radio" name="payment-method">
+                            <label for="payment-paypal">PayPal</label>
                             <div>
 								<button id="paypal-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist im Moment nicht verfügbar', 2)">
 									Weiter mit <img src="../../assets/payments/paypal-wide.png" height="20px">
@@ -82,25 +82,27 @@
                         </div>
                     </form>
                 </div>
-                <div>
-                    <h3>Warenkorb</h3>
-                    <table id="payment-overview">
-                        <tbody>
-                            <tr>
-                                <td>Gesamtpreis: </td>
-                                <td class="text-align-right"><span id="payment-price">PRICE</span></td>
-                            </tr>
-                            <tr>
-                                <td>Mehrwertsteuer (19%): </td>
-                                <td class="text-align-right"><span id="payment-tax">TAX</span></td>
-                            </tr>
-                            <tr>
-                                <td>Gesamtpreis (inkl. MwSt..): &nbsp;</td>
-                                <td class="text-align-right"><span id="payment-total">TOTAL</span></td>
-                            </tr>
-                        </tbody>
-                    </table> 
-                </div>
+				<div>
+					<div id="payment-side-overview">
+						<h3>Warenkorb</h3>
+						<table id="payment-overview">
+							<tbody>
+								<tr>
+									<td>Gesamtpreis: </td>
+									<td class="text-align-right"><span id="payment-price">PRICE</span></td>
+								</tr>
+								<tr>
+									<td>Mehrwertsteuer (19%): </td>
+									<td class="text-align-right"><span id="payment-tax">TAX</span></td>
+								</tr>
+								<tr>
+									<td>Gesamtpreis (inkl. MwSt..): &nbsp;</td>
+									<td class="text-align-right"><span id="payment-total">TOTAL</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
             </div>
 		</div>
 	</section>

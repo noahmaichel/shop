@@ -2,7 +2,7 @@
 
 #payment-split {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
 }
 
@@ -13,19 +13,6 @@
     border-radius: 5px;
     width: 600px;
     background-color: #f7f7f7;
-}
-
-#payment-overview {
-    gap: 0;
-    border-spacing: 0;
-}
-
-#payment-overview td {
-    padding: 8px 0;
-}
-
-#payment-overview tr:last-child td {
-    border-top: 1px solid #000;
 }
 
 .payment-method {
@@ -70,6 +57,26 @@
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
+}
+
+#payment-side-overview {
+	width: max-content;
+	max-width: 300px;
+	float: right;
+}
+
+#payment-overview {
+	width: 100%;
+    gap: 0;
+    border-spacing: 0;
+}
+
+#payment-overview td {
+    padding: 8px 0;
+}
+
+#payment-overview tr:last-child td {
+    border-top: 1px solid #000;
 }
 
 /* CART */
