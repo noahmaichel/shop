@@ -875,3 +875,11 @@ preloadImage("../../assets/website-templates/astra.jpg");
 preloadImage("../../assets/website-templates/twentytwo.jpg");
 preloadImage("../../assets/website-templates/kadence.jpg");
 preloadImage("../../assets/website-templates/popularfx.jpg");
+
+// prevent form submit on enter
+
+Array.from(document.querySelectorAll("form")).forEach(element => {
+	element.onsubmit = (event) => {
+		event.preventDefault();
+	}
+});
