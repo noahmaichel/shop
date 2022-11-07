@@ -475,7 +475,7 @@ function addOnlineshopProduct() {
 			break;
 	}
 	
-	let domainField = document.getElementById("website-config-Domain");
+	let domainField = document.getElementById("website-config-domain");
 
 	if (domainField.value == "" || !isValidDomain(domainField.value)) { // TODO domain lookup
 		enqueueUpdate("<i class='fa-solid fa-xmark'></i> Es wird eine Domain benötigt", 2);

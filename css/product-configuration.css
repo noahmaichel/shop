@@ -210,3 +210,16 @@
     border-right: 0px solid #131313;
     border-bottom-right-radius: 10px;
 }
+
+#website-config-domain {
+    background-color: #ececec;
+    font-size: 16px;
+    border: 0;
+    color: #131313;
+    border-bottom: 1px solid #dadada;
+}
+
+#website-config-domain:focus {
+    outline: none;
+    border-bottom: 1px solid #E94560;
+}
