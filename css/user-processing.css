@@ -16,12 +16,12 @@
 }
 
 .payment-method {
-	padding: 16px 16px 0;
+	padding: 16px;
+    border-bottom: 1px solid #ccc;
 }
 
 .payment-method > div {
-    border-bottom: 1px solid #ccc;
-	padding: 16px 0;
+	padding-top: 16px;
 }
 
 .payment-method:last-child > div {

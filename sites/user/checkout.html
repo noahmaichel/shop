@@ -74,8 +74,8 @@
                         <div class="payment-method">
                             <input id="payment-paypal" type="radio" name="payment-method">
                             <label for="payment-paypal">PayPal</label>
-                            <div>
-								<button id="paypal-button" onclick="enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist im Moment nicht verfügbar', 2)">
+                            <div class="payment-method-layout">
+								<button id="paypal-button" onclick="document.getElementById('payment-paypal').checked = 'true'; enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist derzeit nicht verfügbar', 2)">
 									Weiter mit <img src="../../assets/payments/paypal-wide.png" height="20px">
 								</button>
 							</div>
