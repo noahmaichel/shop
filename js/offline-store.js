@@ -850,6 +850,14 @@ function processPayment() {
 		}
 	});
 
+	// verify tos, ...
+	let tosCheckbox = document.getElementById("payment-accept-requirements");
+	
+	if (!tosCheckbox.checked) {
+		enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> Du musst die AGB und Datenschutzbestimmungen akzeptieren.', 2);
+		proceed = false;
+	}
+
 	if (proceed) {
 		location.href = "order-complete.html";
 	}
