@@ -828,11 +828,13 @@ function updateCheckout() {
 function processPayment() {
 	// verify payment method input
 	let methods = document.querySelectorAll("div.payment-method input[type='radio']");
+	let proceed = true;
 
 	Array.from(methods).forEach(element => {
 		if (element.checked) {
 			if (element.id == "payment-paypal") {
 				enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist derzeit nicht verfügbar', 2);
+				proceed = false;
 				return;
 			}
 
@@ -841,13 +843,16 @@ function processPayment() {
 			for (let i = 0; i < fields.length; i++) {
 				if (fields[i].value == "") {
 					enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> Unvollständige Angaben', 2);
+					proceed = false;
 					return;
 				}
 			}
 		}
 	});
 
-	location.href = "order-complete.html";
+	if (proceed) {
+		location.href = "order-complete.html";
+	}
 }
 
 /* INTERNAL API */
