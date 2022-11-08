@@ -1,7 +1,3 @@
-/*
-This script handles the cart and user details for a functioning demo.
-*/
-
 /* STATUS UPDATES */
 
 const UPDATE_STATUS_NEUTRAL = 0;
@@ -30,10 +26,6 @@ function enqueueUpdate(text, code) {
 	
 	list.append(node);
 }
-
-/* USER DETAILS */
-
-// TODO
 
 /* CART */
 
