@@ -489,14 +489,13 @@ function addOnlineshopProduct() {
 // general
 
 function addItemToCart(product, details) {
-	updateCartIndicator();
-
 	if (details instanceof Map) {
 		product.details = details;
 	}
 
 	appendData(STORAGE_ID_CART, product);
 	enqueueUpdate("<i class='fa-solid fa-plus'></i> Zum Warenkorb hinzugefügt", 0);
+	updateCartIndicator();
 }
 
 function getCart() {
