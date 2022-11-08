@@ -489,6 +489,8 @@ function addOnlineshopProduct() {
 // general
 
 function addItemToCart(product, details) {
+	updateCartIndicator();
+
 	if (details instanceof Map) {
 		product.details = details;
 	}
