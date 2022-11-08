@@ -6,6 +6,10 @@
     grid-gap: 20px;
 }
 
+#payment-split a {
+	text-decoration: underline;
+}
+
 #payment-form {
     display: flex;
     flex-direction: column;
@@ -61,8 +65,13 @@
 
 #payment-side-overview {
 	width: max-content;
+	height: 100%;
 	max-width: 300px;
 	float: right;
+}
+
+#payment-side-overview button{
+	width: 100%;
 }
 
 #payment-overview {

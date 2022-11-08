@@ -825,6 +825,31 @@ function updateCheckout() {
 	paymentTotal.innerHTML = total.toFixed(2).replace(".", ",") + "€";
 }
 
+function processPayment() {
+	// verify payment method input
+	let methods = document.querySelectorAll("div.payment-method input[type='radio']");
+
+	Array.from(methods).forEach(element => {
+		if (element.checked) {
+			if (element.id == "payment-paypal") {
+				enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> PayPal ist derzeit nicht verfügbar', 2);
+				return;
+			}
+
+			let fields = element.parentElement.querySelectorAll("div.payment-method-layout input");
+
+			for (let i = 0; i < fields.length; i++) {
+				if (fields[i].value == "") {
+					enqueueUpdate('<i class=\'fa-solid fa-xmark\'></i> Unvollständige Angaben', 2);
+					return;
+				}
+			}
+		}
+	});
+
+	location.href = "order-complete.html";
+}
+
 /* INTERNAL API */
 
 const STORAGE_ID_USER = 0;

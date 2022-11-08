@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8'>
-	<title>Bezahlen - nmHosting</title>
+	<title>Warenkorb - nmHosting</title>
 	<link href="../../css/style.css" rel="stylesheet" type="text/css">
 	<link href="../../css/user-processing.css" rel="stylesheet" type="text/css">
 	<link href="../../assets/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet">
@@ -40,14 +40,7 @@
 					</div>
 				</li>
 				<div class="nav-right">
-					<li>
-						<a class="nav-min-padding" href="../user/cart.html">
-							<div style="position: relative;">
-								<i class="fa-solid fa-cart-shopping"></i>
-								<div id="nav-cart-indicator"></div>
-							</div>
-						</a>
-					</li>
+					<li><a class="nav-min-padding" href="../user/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
 					<li><a class="nav-min-padding" href="../user/settings.html"><i class="fa-solid fa-user"></i></a></li>
 				</div>
 			</ul>
@@ -56,60 +49,8 @@
 	</nav>
 	<section class="white-themed">
 		<div class="container">
-			<h1>Bezahlen</h1>
-            <div id="payment-split">
-                <div>
-                    <h3>Zahlungsmethode</h3>
-                    <form id="payment-form">
-                        <div class="payment-method">
-                            <input id="payment-card" type="radio" name="payment-method" checked="checked">
-                            <label for="payment-card">Kreditkarte</label>
-                            <div id="payment-credit-card" class="payment-method-layout">
-                                <input type="text" placeholder="Kartennummer">
-                                <input type="text" placeholder="Ablaufdatum">
-                                <input type="text" placeholder="Prüfziffer">
-                            </div>
-                        </div>
-                        <div class="payment-method">
-                            <input id="payment-sepa" type="radio" name="payment-method">
-                            <label for="payment-sepa">SEPA Lastschrift</label>
-                            <div class="payment-method-layout">
-                                <input type="text" placeholder="IBAN">
-                                <input type="text" placeholder="Kontoinhaber">
-                            </div>
-                        </div>
-                        <div class="payment-method">
-                            <input id="payment-paypal" type="radio" name="payment-method">
-                            <label for="payment-paypal">PayPal</label>
-                        </div>
-                    </form>
-                </div>
-				<div>
-					<div id="payment-side-overview" class="flex-vsb">
-						<div>
-							<h3>Warenkorb</h3>
-							<table id="payment-overview">
-								<tbody>
-									<tr>
-										<td>Gesamtpreis: </td>
-										<td class="text-align-right"><span id="payment-price">PRICE</span></td>
-									</tr>
-									<tr>
-										<td>Mehrwertsteuer (19%): </td>
-										<td class="text-align-right"><span id="payment-tax">TAX</span></td>
-									</tr>
-									<tr>
-										<td>Gesamtpreis (inkl. MwSt..): &nbsp;</td>
-										<td class="text-align-right"><span id="payment-total">TOTAL</span></td>
-									</tr>
-								</tbody>
-							</table>
-							<p>Mit deinem Kauf akzeptierst du unsere <a href="../legal/agb.html">AGB</a> und die <a href="../legal/datenschutz.html">Datenschutzbestimmungen</a>.</p>
-						</div>
-						<button class="brand-button" onclick="processPayment()">Bezahlen</button>
-					</div>
-				</div>
-            </div>
+			<h1>Bestellung abgeschlossen</h1>
+			<p>Danke für deine Bestellung! Die Produkte werden gleich in deinem Dashboard freigeschaltet.</p>
 		</div>
 	</section>
 	<footer>
@@ -137,7 +78,7 @@
 					<ul>
                         <li><a href="../legal/agb.html"><span>AGB</span></a></li>
                         <li><a href="../legal/datenschutz.html"><span>Datenschutz</span></a></li>
-                        <li><a href="../legal/impressum.html"><span>Impressum</span></a></li>
+                        <li><a href="../legal/Impressum.html"><span>Impressum</span></a></li>
 					</ul>
 				</div>
 			</div>
