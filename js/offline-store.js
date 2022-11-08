@@ -550,6 +550,8 @@ function printCart() {
 }
 
 function updateCart() {
+	updateCartIndicator();
+
 	let cartTable = document.getElementById("cart");
 	let internalCart = getCart();
 
@@ -658,6 +660,16 @@ function updateCart() {
 
 	let cartTotal = document.getElementById("cart-total");
 	cartTotal.innerHTML = getCartTotal().toFixed(2).replace(".", ",") + "€";
+}
+
+function updateCartIndicator() {
+	let indicator = document.getElementById("nav-cart-indicator");
+
+	if (getCart().length > 0) {
+		indicator.style.display = "block";
+	} else {
+		indicator.style.display = "none";
+	}
 }
 
 /* SITE FUNCTIONALITY */
