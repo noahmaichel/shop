@@ -852,6 +852,7 @@ function processPayment() {
 
 	if (proceed) {
 		location.href = "order-complete.html";
+		clearCart();
 	}
 }
 
