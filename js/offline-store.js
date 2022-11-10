@@ -928,8 +928,9 @@ updateCloudPrice();
 updateCart();
 updateCheckout();
 
-// preload template images
+// preload images
 
+preloadImage("../../assets/brand/Logo-red.png");
 preloadImage("../../assets/website-templates/twentytwentytwo.jpg");
 preloadImage("../../assets/website-templates/astra.jpg");
 preloadImage("../../assets/website-templates/twentytwo.jpg");
