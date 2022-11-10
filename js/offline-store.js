@@ -858,8 +858,7 @@ function processPayment() {
 
 /* INTERNAL API */
 
-const STORAGE_ID_USER = 0;
-const STORAGE_ID_CART = 1;
+const STORAGE_ID_CART = 0;
 
 function setData(id, data) {
 	localStorage.setItem(id, JSON.stringify(data, replacer));
